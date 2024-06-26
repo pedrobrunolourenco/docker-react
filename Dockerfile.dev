@@ -1,0 +1,26 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+
+#docker run -it pedrobruno/simpleweb sh
+#docker build -t pedrobruno/simpleweb .
+#docker run -p 8080:8080 pedrobruno/simpleweb
+#docker run -p 5000:8080 pedrobruno/simpleweb
+#docker exec -it 722b36e1c01a sh
+
+# docker-compose up -d   (sobe o docker-compose)
+# docker ps  (lista os containers)
+# docker-compose down (mata tudo que o docker-compose subiu)
+# docker-compose up -d --build   (garante que vai atualizar depois de uma alteração)
+
+
+# docker build -f Dockerfile.dev .
+#docker run -p 3000:3000 1c2917260eea (para rodar o projeto react com o docker precisar passar a porta)
